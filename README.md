@@ -1,2 +1,0 @@
-# Projeto Mercado Resíduos
-
