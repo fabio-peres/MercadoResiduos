@@ -2,9 +2,9 @@ const Sequelize = require('sequelize');
 module.exports = function () {
     const config = {
         host: '172.18.0.1',
-        database: 'monitor',
-        user: 'monitor',
-        pass: 'monitor123!',
+        database: 'mercado',
+        user: 'mercado',
+        pass: 'mercado123!',
         adapter: 'postgres',
         reconnect: true,
         timezone: '-03:00',
