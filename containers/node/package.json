@@ -1,7 +1,7 @@
 {
-  "name": "monitor",
+  "name": "mercado",
   "version": "1.0.0",
-  "description": "Aplicação para monitoramento veicular",
+  "description": "Mega Hack 3.0",
   "main": "server.js",
   "directories": {
     "lib": "lib"
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/tcs_industrial/monitor-app/src/master/"
+    "url": "https://github.com/fabio-peres/MercadoResiduos"
   },
   "keywords": [
     "node",
     "mongo",
-    "monitor"
+    "mercado"
   ],
   "author": "João Paulo Lopes Cançado",
   "license": "ISC",
