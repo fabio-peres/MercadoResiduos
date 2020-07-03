@@ -22,7 +22,7 @@ module.exports = function(app) {
      * init
      */
     _self.init = () => {
-        executarAlgo();
+        //executarAlgo();
     }
 
     return _self;
