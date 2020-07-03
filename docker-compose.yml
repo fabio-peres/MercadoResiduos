@@ -1,5 +1,16 @@
 version: '3'
 services:
+  container_name: mercado_nginx
+    image: nginx:stable-alpine
+    ports:
+      - 3000:80
+    depends_on:
+      - node
+    volumes:
+      - ./containers/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./containers/nginx:/var/log/nginx
+    networks:
+        - mercado-network
   node:
     container_name: mercado_node
     build: containers/node/.
