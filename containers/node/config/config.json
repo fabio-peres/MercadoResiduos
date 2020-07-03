@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "mercado",
+    "password": "mercado123!",
+    "database": "mercado",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}
