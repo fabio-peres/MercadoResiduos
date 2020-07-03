@@ -35,10 +35,10 @@ module.exports = function () {
                 .then("routes")
                 .into(app);
             app.cronjob = new cronjob(app);
-            app.cronjob.init();
+            //app.cronjob.init();
             app.get('*', (req, res) => {
                 res.status(200).json({
-                    message: "I m working hard, please don't distubed!"
+                    message: "Mercado Resíduos - Mega Hack 3.0"
                 });
             });
         }
