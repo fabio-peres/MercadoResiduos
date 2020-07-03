@@ -29,9 +29,9 @@ module.exports = function () {
     const getConfig = () => {
         const config = {
             database: process.env.NODE_MONGO_DBNAME || "mercado",
-            host: process.env.NODE_MONGO_HOST || 'mercado',
-            user: process.env.NODE_MONGO_USER || 'mercado',
-            pass: process.env.NODE_MONGO_PASS || 'mercado123!',
+            host: process.env.NODE_MONGO_HOST || 'ec2-54-224-198-122.compute-1.amazonaws.com',
+            user: process.env.NODE_MONGO_USER || '',
+            pass: process.env.NODE_MONGO_PASS || '',
             port: process.env.NODE_MONGO_PORT || 27017
         };
         return config;
