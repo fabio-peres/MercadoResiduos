@@ -1,6 +1,6 @@
 module.exports = function (app) {
     const _self = {};
-    const StatusReport = app.models.StatusReport;
+    const StatusReport = app.models.User;
 
     /**
      * getUser
