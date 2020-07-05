@@ -21,6 +21,11 @@ module.exports = function (app) {
         cep: {
             type: Sequelize.STRING,
             allowNull: false
+        },
+        usuario_id: {
+            type: DataTypes.INTEGER,
+            foreignKey: true,
+            references: { model: 'usuario', key: 'id' }
         }
     }, {
         createdAt: false,
