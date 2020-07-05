@@ -30,7 +30,7 @@ module.exports = function (app) {
                 });
             }
 
-            if (!(await passwordIsValid(password))) {
+            if (!(passwordIsValid(password))) {
                 return res.status(401).json({
                     errors: ['Senha inválida'],
                 });
@@ -45,7 +45,7 @@ module.exports = function (app) {
 
 
         } catch (error) {
-            app.logger.error('app - controllers - StatusRepost - get: ' + error);
+            app.logger.error('app - controllers - user - get: ' + error);
             res.status(500).json({
                 status: 500,
                 message: 'Internal server error',
@@ -54,7 +54,7 @@ module.exports = function (app) {
         }
     }
 
-    const passwordIsValid = async (password) => bcryptjs.compare(password, this.password_hash);
+    const passwordIsValid = (password) => bcryptjs.compare(password, this.password_hash);
 
     return _self;
 }
