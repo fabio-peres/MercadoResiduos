@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function (app) {
-    const User = app.connector.define('user', {
+    const User = app.connector.define('usuario', {
         id: {
             primaryKey: true,
             type: Sequelize.INTEGER,
@@ -30,7 +30,7 @@ module.exports = function (app) {
         updatedAt: false,
         deletedAt: false,
         freezeTableName: true,
-        tableName: 'user'
+        tableName: 'usuario'
     });
 
     return User;
