@@ -15,6 +15,10 @@ module.exports = function (app) {
             allowNull: false,
             unique: true
         },
+        senha: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
         documento: {
             type: Sequelize.STRING,
             allowNull: false,
