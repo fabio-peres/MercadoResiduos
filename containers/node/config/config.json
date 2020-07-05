@@ -3,7 +3,7 @@
     "username": "mercado",
     "password": "mercado123!",
     "database": "mercado",
-    "host": "127.0.0.1",
+    "host": "172.18.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
   }
