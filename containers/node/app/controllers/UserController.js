@@ -25,6 +25,7 @@ module.exports = function (app) {
             const { id, nome, email, documento } = newUser;
             return res.json({ id, nome, email, documento });
         } catch (e) {
+            console.log(e);
             return res.status(400).json({
                 errors: e.errors.map((err) => err.message),
             });
