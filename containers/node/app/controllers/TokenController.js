@@ -30,7 +30,7 @@ module.exports = function (app) {
                 });
             }
 
-            if (!(passwordIsValid(password))) {
+            if (!(passwordIsValid(password, user.senha))) {
                 return res.status(401).json({
                     errors: ['Senha inválida'],
                 });
@@ -43,7 +43,6 @@ module.exports = function (app) {
 
             return res.json({ token, user: { nome: user.nome, id, email } });
 
-
         } catch (error) {
             app.logger.error('app - controllers - user - get: ' + error);
             res.status(500).json({
@@ -54,7 +53,7 @@ module.exports = function (app) {
         }
     }
 
-    const passwordIsValid = (password) => bcryptjs.compare(password, this.password_hash);
+    const passwordIsValid = (password, hash) => bcryptjs.compare(password, hash);
 
     return _self;
 }
