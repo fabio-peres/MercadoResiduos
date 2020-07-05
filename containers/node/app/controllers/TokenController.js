@@ -1,11 +1,12 @@
 const jwt = require('jsonwebtoken');
+const bcryptjs = require('bcryptjs');
 
 module.exports = function (app) {
     const _self = {};
     const User = app.models.User;
 
     /**
-     * getUser
+     * get
      * @param {Object} req
      * @param {Object} res
      * @route /api/token
@@ -13,7 +14,6 @@ module.exports = function (app) {
      */
     _self.get = async (req, res) => {
         try {
-
             const { email = '', password = '' } = req.body;
 
             if (!email || !password) {
@@ -54,7 +54,7 @@ module.exports = function (app) {
         }
     }
 
-
+    const passwordIsValid = async (password) => bcryptjs.compare(password, this.password_hash);
 
     return _self;
 }
