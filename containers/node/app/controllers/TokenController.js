@@ -30,11 +30,18 @@ module.exports = function (app) {
                 });
             }
 
-            if (!(await user.passwordIsValid(password))) {
+            if (!(await passwordIsValid(password))) {
                 return res.status(401).json({
                     errors: ['Senha inválida'],
                 });
             }
+
+            const { id } = user;
+            const token = jwt.sign({ id, email }, process.env.TOKEN_SECRET, {
+                expiresIn: process.env.TOKEN_EXPIRATION,
+            });
+
+            return res.json({ token, user: { nome: user.nome, id, email } });
 
 
         } catch (error) {
@@ -46,6 +53,8 @@ module.exports = function (app) {
             });
         }
     }
+
+
 
     return _self;
 }
