@@ -3,7 +3,7 @@
     "username": "mercado",
     "password": "mercado123!",
     "database": "mercado",
-    "host": "172.18.0.1",
+    "host": "mercado.cguwxei7x16e.us-east-1.rds.amazonaws.com",
     "dialect": "postgres",
     "operatorsAliases": false
   }
