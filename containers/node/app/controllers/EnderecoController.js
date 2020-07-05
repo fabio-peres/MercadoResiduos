@@ -11,7 +11,7 @@ module.exports = function (app) {
      */
     _self.cadastrarEndereco = async (req, res) => {
         try {
-            const novoEndereco = await User.create(req.body);
+            const novoEndereco = await Endereco.create(req.body);
 
             const { id, logradouro, numero, bairro, cep, usuario_id } = novoEndereco;
 
