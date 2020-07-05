@@ -2,7 +2,7 @@ const bcryptjs = require('bcryptjs');
 
 module.exports = function (app) {
     const _self = {};
-    const StatusReport = app.models.User;
+    const User = app.models.User;
 
     /**
      * createUser
