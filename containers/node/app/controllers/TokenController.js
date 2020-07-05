@@ -14,9 +14,9 @@ module.exports = function (app) {
      */
     _self.get = async (req, res) => {
         try {
-            const { email = '', password = '' } = req.body;
+            const { email = '', senha = '' } = req.body;
 
-            if (!email || !password) {
+            if (!email || !senha) {
                 return res.status(401).json({
                     errors: ['Credenciais inválidas'],
                 });
@@ -30,7 +30,7 @@ module.exports = function (app) {
                 });
             }
 
-            if (!(passwordIsValid(password, user.senha))) {
+            if (!(passwordIsValid(senha, user.senha))) {
                 return res.status(401).json({
                     errors: ['Senha inválida'],
                 });
