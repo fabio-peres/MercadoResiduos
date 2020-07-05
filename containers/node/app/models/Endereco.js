@@ -20,8 +20,7 @@ module.exports = function (app) {
         },
         cep: {
             type: Sequelize.STRING,
-            allowNull: false,
-            unique: true
+            allowNull: false
         }
     }, {
         createdAt: false,
