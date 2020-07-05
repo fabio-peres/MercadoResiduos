@@ -26,7 +26,7 @@ module.exports = function (app) {
             return res.json({ id, nome, email, documento });
         } catch (e) {
             console.log(e);
-            return res.status(400).json({
+            return res.status(500).json({
                 errors: e.message,
             });
         }
