@@ -37,8 +37,8 @@ module.exports = function (app) {
             }
 
             const { id } = user;
-            const token = jwt.sign({ id, email }, process.env.TOKEN_SECRET, {
-                expiresIn: process.env.TOKEN_EXPIRATION,
+            const token = jwt.sign({ id, email }, 'mega_hack_3.0', {
+                expiresIn: '7d',
             });
 
             return res.json({ token, user: { nome: user.nome, id, email } });
