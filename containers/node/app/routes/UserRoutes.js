@@ -1,5 +1,5 @@
-module.exports = function(app) {
-    const controller = app.controllers.UserController;
+module.exports = function (app) {
+    const UserController = app.controllers.UserController;
     app.route('/api/user')
-        .get(controller.get);
+        .get(UserController.authorizeRequest, UserController.get);
 }
