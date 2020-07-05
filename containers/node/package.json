@@ -39,7 +39,7 @@
     "node-pg-migrate": "^4.2.0",
     "pg": "^7.15.0",
     "pg-hstore": "^2.3.3",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "sequelize": "^5.21.3",
     "winston": "^3.2.1"
   },

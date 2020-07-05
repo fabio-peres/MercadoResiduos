@@ -1,3 +1,5 @@
+const request = require('request');
+
 module.exports = function (app) {
     const _self = {};
     const Endereco = app.models.Endereco;
