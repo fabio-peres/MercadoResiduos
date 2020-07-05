@@ -8,8 +8,8 @@ module.exports = {
       logradouro VARCHAR(100) NOT NULL,
       numero VARCHAR(10) NOT NULL,
       bairro VARCHAR(100) NOT NULL,
-      cep VARCHAR(15) NOT NULL),
-      cidade VARCHAR(100) NOT NULL;`
+      cep VARCHAR(15) NOT NULL,
+      cidade VARCHAR(100) NOT NULL);`
     );
   },
 
