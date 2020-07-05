@@ -12,20 +12,21 @@ module.exports = function (app) {
         },
         email: {
             type: Sequelize.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         documento: {
-            type: Sequelize.INTEGER,
-            allowNull: false
+            type: Sequelize.STRING,
+            allowNull: false,
+            unique: true
         }
     }, {
-        //Desable fields for not create automatic into table
-        createdAt: true,
-        updatedAt: true,
+        createdAt: false,
+        updatedAt: false,
         deletedAt: false,
         freezeTableName: true,
         tableName: 'user'
     });
-    //Return
+
     return User;
 };
