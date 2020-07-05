@@ -35,8 +35,8 @@ module.exports = function (app) {
      */
     _self.buscarAgenciaCorreios = async (req, res) => {
         try {
-            const endereco_id = req.params.id;
-            const endereco = await Endereco.findById(endereco_id);
+            const id = req.params.id;
+            const endereco = await Endereco.findOne(id);
 
             const { cidade, bairro } = endereco;
 
