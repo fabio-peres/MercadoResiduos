@@ -35,7 +35,10 @@ module.exports = function (app) {
      */
     _self.buscarAgenciaCorreios = async (req, res) => {
         try {
-            const { bairro, cidade } = req.body;
+            const endereco_id = req.params.id;
+            const endereco = await Endereco.findById(endereco_id);
+
+            const { cidade, bairro } = endereco;
 
             const url = `https://maps.googleapis.com/maps/api/distancematrix/json?
             origins=30441011&
