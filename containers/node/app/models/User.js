@@ -3,7 +3,7 @@ module.exports = function (app) {
     const User = app.connector.define('user', {
         id: {
             primaryKey: true,
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             autoIncrement: true
         },
         nome: {
