@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.sequelize.query(`
-    CREATE TABLE public.user (
+    CREATE TABLE public.usuario (
       id SERIAL PRIMARY KEY,
       nome VARCHAR(50) NOT NULL,
       email VARCHAR(50) NOT NULL,
@@ -14,6 +14,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.sequelize.query(`DROP TABLE public.user`);
+    await queryInterface.sequelize.query(`DROP TABLE public.usuario`);
   }
 };
