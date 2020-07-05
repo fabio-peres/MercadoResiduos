@@ -44,11 +44,9 @@ module.exports = function (app) {
             return res.json({ token, user: { nome: user.nome, id, email } });
 
         } catch (error) {
-            app.logger.error('app - controllers - user - get: ' + error);
-            res.status(500).json({
-                status: 500,
-                message: 'Internal server error',
-                data: error.stack
+            console.log(e);
+            return res.status(500).json({
+                errors: e.message,
             });
         }
     }
