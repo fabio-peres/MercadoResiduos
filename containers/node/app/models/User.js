@@ -19,7 +19,7 @@ module.exports = function (app) {
             type: Sequelize.STRING,
             allowNull: false
         },
-        categoria: DataTypes.ENUM('C', 'V'),
+        categoria: Sequelize.ENUM('C', 'V'),
         documento: {
             type: Sequelize.STRING,
             allowNull: false,
