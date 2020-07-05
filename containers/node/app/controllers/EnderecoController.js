@@ -40,7 +40,7 @@ module.exports = function (app) {
                 where: { id }
             });
             console.log(endereco)
-            const { cidade, bairro } = endereco;
+            const { cidade, bairro } = endereco.dataValues;
 
             const url = `https://maps.googleapis.com/maps/api/distancematrix/json?
             origins=30441011&
