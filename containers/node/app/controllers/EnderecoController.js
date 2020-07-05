@@ -37,7 +37,7 @@ module.exports = function (app) {
         try {
             const id = req.params.id;
             const endereco = await Endereco.findOne({
-                where: { id }
+                where: { id: 2 }
             });
 
             const { cidade, bairro } = endereco;
