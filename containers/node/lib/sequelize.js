@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 module.exports = function () {
     const config = {
-        host: '172.18.0.1',
+        host: 'mercado.cguwxei7x16e.us-east-1.rds.amazonaws.com',
         database: 'mercado',
         user: 'mercado',
         pass: 'mercado123!',
