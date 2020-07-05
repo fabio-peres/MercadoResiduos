@@ -30,13 +30,15 @@ module.exports = function (app) {
      * buscarAgenciaCorreios
      * @param {Object} req
      * @param {Object} res
-     * @route /api/endereco/correios
+     * @route /api/endereco/correios/:id
      * @method POST
      */
     _self.buscarAgenciaCorreios = async (req, res) => {
         try {
             const id = req.params.id;
-            const endereco = await Endereco.findByPk(id);
+            const endereco = await Endereco.findOne({
+                where: { id }
+            });
 
             const { cidade, bairro } = endereco;
 
