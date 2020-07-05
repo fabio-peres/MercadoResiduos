@@ -13,7 +13,6 @@ module.exports = function (app) {
      */
     _self.createUser = async (req, res) => {
         try {
-
             const { senha } = req.body;
 
             const salt = await bcryptjs.genSalt(10);
