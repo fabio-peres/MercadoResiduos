@@ -3,38 +3,20 @@ module.exports = function (app) {
     const StatusReport = app.models.User;
 
     /**
-     * getUser
+     * createUser
      * @param {Object} req
      * @param {Object} res
-     * @route /api/status-report/:imei
-     * @method GET
+     * @route /api/user
+     * @method POST
      */
-    _self.get = async (req, res) => {
+    _self.createUser = async (req, res) => {
         try {
-            const statusReport = await StatusReport.findOne({ dev_id: req.params.imei })
-                .sort({ date_module: -1 });
-
-            if (statusReport) {
-                res.status(200).json({
-                    status: 200,
-                    message: 'Status Report',
-                    data: statusReport,
-                    total: 1
-                });
-            } else {
-                res.status(400).json({
-                    status: 400,
-                    message: 'module not found',
-                    data: null,
-                    total: 0
-                });
-            }
-        } catch (error) {
-            app.logger.error('app - controllers - StatusRepost - get: ' + error);
-            res.status(500).json({
-                status: 500,
-                message: 'Internal server error',
-                data: error.stack
+            const newUser = await User.create(req.body);
+            const { id, nome, email, documento } = newUser;
+            return res.json({ id, nome, email, documento });
+        } catch (e) {
+            return res.status(400).json({
+                errors: e.errors.map((err) => err.message),
             });
         }
     }
