@@ -2,8 +2,8 @@ const Sequelize = require('sequelize');
 module.exports = function (app) {
     const User = app.connector.define('user', {
         id: {
-            type: DataTypes.INTEGER,
             primaryKey: true,
+            type: DataTypes.INTEGER,
             autoIncrement: true
         },
         nome: {
