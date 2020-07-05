@@ -7,7 +7,7 @@ module.exports = {
       id SERIAL PRIMARY KEY,
       nome VARCHAR(50) NOT NULL,
       email VARCHAR(50) NOT NULL,
-      senha VARCHAR(50) NOT NULL,
+      senha VARCHAR(100) NOT NULL,
       documento VARCHAR(50) NOT NULL);`
     );
   },
