@@ -36,7 +36,7 @@
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "moment": "^2.24.0",
-    "mongoose": "^5.5.5",
+    "mongoose": "^5.7.5",
     "node-pg-migrate": "^4.2.0",
     "pg": "^7.15.0",
     "pg-hstore": "^2.3.3",
