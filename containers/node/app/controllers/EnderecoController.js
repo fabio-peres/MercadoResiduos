@@ -42,10 +42,17 @@ module.exports = function (app) {
             console.log(endereco.bairro)
 
             const { cidade, bairro } = endereco;
+            const _options = {
+                url: `https://maps.googleapis.com/maps/api/distancematrix/json?
+                origins=30441011&
+                destinations=correios+${cidade}+${bairro}&
+                mode=CAR&
+                language=PT&
+                key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`
+            }
 
-            const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=30441011&destinations=correios+${cidade}+${bairro}&mode=CAR&language=PT&key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`;
             return await new Promise((resolve, reject) => {
-                request.post(url, (error, response, body) => {
+                request.post(_options, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
