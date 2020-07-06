@@ -34,34 +34,30 @@ module.exports = function (app) {
      * @method POST
      */
     _self.buscarAgenciaCorreios = async (req, res) => {
+        try {
+            const id = req.params.id;
+            const endereco = await Endereco.findOne({ where: { id } });
 
-        const id = req.params.id;
-        const endereco = await Endereco.findOne({ where: { id } });
+            const { cidade, bairro } = endereco;
 
-        const { cidade, bairro } = endereco;
+            const url = `https://maps.googleapis.com/maps/api/distancematrix/json?
+                origins=30441011&
+                destinations=correios+${cidade}+${bairro}&
+                mode=CAR&
+                language=PT&
+                key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`;
 
-        let request = `https://maps.googleapis.com/maps/api/distancematrix/json?
-            origins=30441011&
-            destinations=correios+${cidade}+${bairro}&
-            mode=CAR&
-            language=PT&
-            key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`;
+            const result = await axios.get(url);
 
-        let result = await axios({
-            method: 'post',
-            url: request
-        })
-            .then(info => {
-                return info.data
-            })
-            .catch(async error => {
-                return res.status(500).json({
-                    errors: e.message,
-                });
+            return res.status(200).json({ data: result.data });
+        } catch (e) {
+            console.log(e);
+            return res.status(500).json({
+                errors: e.message,
+            });
+        }
 
-            })
 
-        return result;
     }
 
     return _self;
