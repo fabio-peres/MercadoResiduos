@@ -51,7 +51,6 @@ module.exports = function (app) {
 
             return res.status(200).json({ data: result.data });
         } catch (e) {
-            console.log(e);
             return res.status(500).json({
                 errors: e.message,
             });
