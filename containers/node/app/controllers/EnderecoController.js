@@ -17,7 +17,7 @@ module.exports = function (app) {
 
             const { id, logradouro, numero, bairro, cep, usuario_id } = novoEndereco;
 
-            return res.status(200).json({ id, logradouro, numero, bairro, cep, usuario_id });
+            return res.status(200).json({ id, logradouro, numero, bairro, cidade, cep, usuario_id });
         } catch (e) {
             console.log(e);
             return res.status(500).json({
