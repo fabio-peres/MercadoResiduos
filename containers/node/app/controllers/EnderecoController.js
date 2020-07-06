@@ -45,7 +45,7 @@ module.exports = function (app) {
                 destinations=correios+${cidade}+${bairro}&
                 mode=CAR&
                 language=PT&
-                key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`;
+                API_KEY=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`;
 
             const result = await axios.get(url);
 
