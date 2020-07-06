@@ -1,4 +1,4 @@
-const request = require('request');
+const axios = require('axios');
 
 module.exports = function (app) {
     const _self = {};
