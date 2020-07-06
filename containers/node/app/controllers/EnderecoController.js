@@ -44,7 +44,7 @@ module.exports = function (app) {
             const { cidade, bairro } = endereco;
 
             const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=30441011&destinations=correios+${cidade}+${bairro}&mode=CAR&language=PT&key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`;
-            await new Promise((resolve, reject) => {
+            return await new Promise((resolve, reject) => {
                 console.log(url)
                 request(url, { json: true, headers: { 'content-type': 'application/json' }, method: 'POST' }, (error, response, body) => {
                     if (error) {
