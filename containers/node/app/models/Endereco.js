@@ -22,6 +22,10 @@ module.exports = function (app) {
             type: Sequelize.STRING,
             allowNull: false
         },
+        cidade: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
         usuario_id: {
             type: Sequelize.INTEGER,
             foreignKey: true,
