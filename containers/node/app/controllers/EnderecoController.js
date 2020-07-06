@@ -34,43 +34,34 @@ module.exports = function (app) {
      * @method POST
      */
     _self.buscarAgenciaCorreios = async (req, res) => {
-        try {
-            const id = req.params.id;
-            const endereco = await Endereco.findOne({ where: { id } });
-            console.log(endereco)
-            console.log(endereco.cidade)
-            console.log(endereco.bairro)
 
-            const { cidade, bairro } = endereco;
-            const _options = {
-                url: `https://maps.googleapis.com/maps/api/distancematrix/json?
-                origins=30441011&
-                destinations=correios+${cidade}+${bairro}&
-                mode=CAR&
-                language=PT&
-                key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`
-            }
+        const id = req.params.id;
+        const endereco = await Endereco.findOne({ where: { id } });
 
-            return await new Promise((resolve, reject) => {
-                request.post(_options, (error, response, body) => {
-                    if (error) {
-                        reject(error);
-                    } else {
-                        if (response.statusCode == 201) {
-                            resolve(body);
-                        } else {
-                            console.log(body);
-                            reject(erroCode(body));
-                        }
-                    }
+        const { cidade, bairro } = endereco;
+
+        let request = `https://maps.googleapis.com/maps/api/distancematrix/json?
+            origins=30441011&
+            destinations=correios+${cidade}+${bairro}&
+            mode=CAR&
+            language=PT&
+            key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`;
+
+        let result = await axios({
+            method: 'post',
+            url: request
+        })
+            .then(info => {
+                return info.data
+            })
+            .catch(async error => {
+                return res.status(500).json({
+                    errors: e.message,
                 });
-            });
-        } catch (e) {
-            console.log(e);
-            return res.status(500).json({
-                errors: e.message,
-            });
-        }
+
+            })
+
+        return result;
     }
 
     return _self;
