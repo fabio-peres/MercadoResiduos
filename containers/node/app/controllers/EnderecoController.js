@@ -52,7 +52,8 @@ module.exports = function (app) {
                         if (response.statusCode == 201) {
                             resolve(body);
                         } else {
-                            reject(erroCode(body[0].Code));
+                            console.log(body);
+                            reject(erroCode(body));
                         }
                     }
                 });
