@@ -6,40 +6,45 @@ module.exports = function (app) {
             required: true
         },
         modelo: {
-            type: Date,
+            type: String,
             required: true
         },
         tempo_uso: {
-            type: String,
+            type: Date,
             required: true
         },
         esta_funcionando: {
-            type: String,
+            type: Boolean,
             required: true
         },
         tela_quebrada: {
-            type: String,
+            type: Boolean,
             required: true
         },
         touch_funciona: {
-            type: String,
+            type: Boolean,
             required: true
         },
         botoes_funcionam: {
-            type: String,
+            type: Boolean,
             required: true
         },
         camera_funciona: {
-            type: String,
+            type: Boolean,
             required: true
         },
         audio_funciona: {
-            type: String,
+            type: Boolean,
             required: true
         },
         bateria_viciada: {
-            type: String,
+            type: Boolean,
             required: true
+        },
+        usuario_id: {
+            type: String,
+            required: true,
+            index: true
         }
     });
     return app.mongoose.model('dispositivo', schema);
