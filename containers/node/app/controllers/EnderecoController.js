@@ -15,7 +15,7 @@ module.exports = function (app) {
         try {
             const novoEndereco = await Endereco.create(req.body);
 
-            const { id, logradouro, numero, bairro, cep, usuario_id } = novoEndereco;
+            const { id, logradouro, numero, bairro, cep, cidade, usuario_id } = novoEndereco;
 
             return res.status(200).json({ id, logradouro, numero, bairro, cidade, cep, usuario_id });
         } catch (e) {
