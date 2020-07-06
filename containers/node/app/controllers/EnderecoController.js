@@ -50,6 +50,7 @@ module.exports = function (app) {
             language=PT&
             key=AIzaSyAcdewADbYDBKLbU4HlJkuxJ8st7rARuK4`;
             await new Promise((resolve, reject) => {
+                console.log(url)
                 request(url, { json: true, headers: { 'content-type': 'application/json' }, method: 'POST' }, (error, response, body) => {
                     if (error) {
                         reject(error);
